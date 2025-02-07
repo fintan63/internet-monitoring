@@ -132,10 +132,14 @@ function App() {
   return (
     <div className="container">
       <h1>Internet Connection Monitor</h1>
-      <p>Uptime: {uptime.toFixed(2)}%</p>
-      <p>Downtime: {downtime.toFixed(2)}%</p>
-      <p>Average Latency: {avgLatency.toFixed(2)} ms</p>
-      <Line data={chartData} options={chartOptions} />
+      <div className="stats">
+        <p>Uptime: {uptime.toFixed(2)}%</p>
+        <p>Downtime: {downtime.toFixed(2)}%</p>
+        <p>Average Latency: {avgLatency.toFixed(2)} ms</p>
+      </div>
+      <div className="chart-container">
+        <Line data={chartData} options={chartOptions} />
+      </div>
     </div>
   );
 }
